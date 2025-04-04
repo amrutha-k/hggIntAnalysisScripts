@@ -1,0 +1,284 @@
+CATEGORY 0
+initializing Minuit...
+performing minimization...
+W SimplexBuilder Simplex did not converge, edm > minedm
+W VariableMetricBuilder No improvement in line search
+W VariableMetricBuilder Iterations finish without convergence; Edm 1.5584e+20 Requested 0.0002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder Invalid Hessian - exit the minimization
+W VariableMetricBuilder No convergence; Edm 6.21102e+19 is above tolerance 0.002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W VariableMetricBuilder Matrix not pos.def, gdel = 6602.86 > 0
+W MnPosDef non-positive diagonal element in covariance matrix[ 56 ] = -3.84745
+W MnPosDef Added to diagonal of Error matrix a value 4.34745
+W VariableMetricBuilder gdel = -3.66227e+07
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W VariableMetricBuilder Matrix not pos.def., try to make pos.def.
+W MnPosDef non-positive diagonal element in covariance matrix[ 53 ] = -4.23476e-05
+W MnPosDef Added to diagonal of Error matrix a value 0.500042
+W MnPosDef Matrix forced pos-def by adding to diagonal 0.4884
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W DavidonErrorUpdator delgam < 0 : first derivatives increasing along search line (details in info log)
+W VariableMetricBuilder Matrix not pos.def., try to make pos.def.
+W MnPosDef non-positive diagonal element in covariance matrix[ 54 ] = -7.21439e-09
+W MnPosDef non-positive diagonal element in covariance matrix[ 111 ] = -0.000101793
+W MnPosDef Added to diagonal of Error matrix a value 0.500102
+W VariableMetricBuilder No improvement in line search
+W VariableMetricBuilder Iterations finish without convergence; Edm 1.05439e+15 Requested 0.0002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder Invalid Hessian - exit the minimization
+W VariableMetricBuilder No convergence; Edm 1.04288e+15 is above tolerance 0.002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder No improvement in line search
+W VariableMetricBuilder Iterations finish without convergence; Edm 5e+09 Requested 0.0002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder Invalid Hessian - exit the minimization
+W VariableMetricBuilder No convergence; Edm 1.25e+09 is above tolerance 0.002
+W SimplexBuilder Simplex did not converge, edm > minedm
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder No improvement in line search
+W VariableMetricBuilder Iterations finish without convergence; Edm 5e+09 Requested 0.0002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder Invalid Hessian - exit the minimization
+W VariableMetricBuilder No convergence; Edm 1.25e+09 is above tolerance 0.002
+W SimplexBuilder Simplex did not converge, edm > minedm
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder No improvement in line search
+W VariableMetricBuilder Iterations finish without convergence; Edm 5e+09 Requested 0.0002
+W MnHesse 2nd derivative zero for parameter alpha_p1_m125 ; MnHesse fails and will return diagonal matrix
+W VariableMetricBuilder Invalid Hessian - exit the minimization
+W VariableMetricBuilder No convergence; Edm 1.25e+09 is above tolerance 0.002
+Fitted parameters:
+alpha_p0_m120 = -0.1066 ± 0.0187
+alpha_p1_m120 = -0.0111 ± 0.0013
+alpha_p0_m125 = -0.1056 ± 0.0164
+alpha_p1_m125 = -0.0000 ± 0.0000
+alpha_p0_m130 = -0.0000 ± 0.0000
+alpha_p1_m130 = -0.0000 ± 0.0000
+m_p0_m120 = 124.7957 ± 0.0334
+m_p1_m120 = 0.0044 ± 0.0008
+m_p0_m125 = 124.8330 ± 0.0227
+m_p1_m125 = 0.0914 ± 0.0137
+m_p0_m130 = 124.3746 ± 0.0200
+m_p1_m130 = 0.0894 ± 0.0034
+sigma_p0_m120 = 1.9476 ± 0.2909
+sigma_p1_m120 = 0.2046 ± 0.0306
+sigma_p0_m125 = 1.7994 ± 0.2688
+sigma_p1_m125 = 0.4798 ± 0.0717
+sigma_p0_m130 = 1.0763 ± 0.0200
+sigma_p1_m130 = -0.0106 ± 0.0014
+n1_p0_m120 = 49.8849 ± 7.4522
+n1_p1_m120 = 0.2424 ± 0.0362
+n1_p0_m125 = 29.4765 ± 4.4034
+n1_p1_m125 = 1.4114 ± 0.2108
+n1_p0_m130 = 12.4873 ± 2.0016
+n1_p1_m130 = -0.3755 ± 0.0352
+n2_p0_m120 = 34.4185 ± 5.1417
+n2_p1_m120 = 1.2525 ± 0.1871
+n2_p0_m125 = 43.5440 ± 6.5050
+n2_p1_m125 = 1.4567 ± 0.2176
+n2_p0_m130 = 5.0634 ± 0.7564
+n2_p1_m130 = -0.0001 ± 0.0000
+a1_p0_m120 = 14.3608 ± 2.1453
+a1_p1_m120 = 1.4891 ± 0.2225
+a1_p0_m125 = 19.9486 ± 2.9801
+a1_p1_m125 = 1.4760 ± 0.2205
+a1_p0_m130 = 5.1174 ± 0.0557
+a1_p1_m130 = -0.7982 ± 0.0111
+a2_p0_m120 = 44.5368 ± 6.6533
+a2_p1_m120 = 0.6832 ± 0.1021
+a2_p0_m125 = 36.8359 ± 5.5028
+a2_p1_m125 = 1.2650 ± 0.1890
+a2_p0_m130 = 47.0664 ± 7.0312
+a2_p1_m130 = 1.4576 ± 0.2177
+N_p0_m120 = 4.7496 ± 0.7095
+N_p1_m120 = 0.0997 ± 0.0149
+N_p0_m125 = 4.5711 ± 0.6829
+N_p1_m125 = 0.0985 ± 0.0147
+N_p0_m130 = 3.6658 ± 0.0781
+N_p1_m130 = -0.0207 ± 0.0028
+sigma_int_p0_m120[0] = 1.0806 ± 0.0274
+sigma_int_p0_m120[1] = 1.0742 ± 0.0361
+sigma_int_p0_m120[2] = 1.0600 ± 0.0207
+sigma_int_p0_m120[3] = 1.1477 ± 0.0259
+sigma_int_p0_m120[4] = 0.9722 ± 0.0221
+sigma_int_p1_m120[0] = 0.0000 ± 0.0000
+sigma_int_p1_m120[1] = 0.0000 ± 0.0000
+sigma_int_p1_m120[2] = 0.0043 ± 0.0006
+sigma_int_p1_m120[3] = 0.0314 ± 0.0061
+sigma_int_p1_m120[4] = -0.0025 ± 0.0003
+sigma_int_p0_m125[0] = 0.4500 ± 0.0013
+sigma_int_p0_m125[1] = 0.4500 ± 0.0021
+sigma_int_p0_m125[2] = 0.4500 ± 0.0017
+sigma_int_p0_m125[3] = 0.4500 ± 0.0042
+sigma_int_p0_m125[4] = 1.9003 ± 0.3355
+sigma_int_p1_m125[0] = 0.1083 ± 0.0133
+sigma_int_p1_m125[1] = 0.0900 ± 0.0000
+sigma_int_p1_m125[2] = -0.0071 ± 0.0008
+sigma_int_p1_m125[3] = 0.0149 ± 0.0022
+sigma_int_p1_m125[4] = 0.0768 ± 0.0117
+sigma_int_p0_m130[0] = 1.9847 ± 0.2965
+sigma_int_p0_m130[1] = 1.9976 ± 0.2984
+sigma_int_p0_m130[2] = 1.9454 ± 0.2906
+sigma_int_p0_m130[3] = 1.1423 ± 0.1707
+sigma_int_p0_m130[4] = 1.0716 ± 0.1601
+sigma_int_p1_m130[0] = 0.1100 ± 0.0162
+sigma_int_p1_m130[1] = -0.0000 ± 0.0000
+sigma_int_p1_m130[2] = 0.0287 ± 0.0043
+sigma_int_p1_m130[3] = 0.0448 ± 0.0067
+sigma_int_p1_m130[4] = 0.0722 ± 0.0108
+n1_int_p0_m120[0] = 49.3167 ± 7.3673
+n1_int_p0_m120[1] = 10.5534 ± 0.0837
+n1_int_p0_m120[2] = 9.1792 ± 0.0818
+n1_int_p0_m120[3] = 49.9516 ± 7.4622
+n1_int_p0_m120[4] = 1.0718 ± 0.0520
+n1_int_p1_m120[0] = 1.6499 ± 0.1942
+n1_int_p1_m120[1] = 1.6252 ± 0.0241
+n1_int_p1_m120[2] = 1.4791 ± 0.0163
+n1_int_p1_m120[3] = 1.3301 ± 0.1987
+n1_int_p1_m120[4] = 0.0205 ± 0.0043
+n1_int_p0_m125[0] = 42.6680 ± 6.3741
+n1_int_p0_m125[1] = 47.4132 ± 7.0830
+n1_int_p0_m125[2] = 47.7885 ± 7.1390
+n1_int_p0_m125[3] = 47.0511 ± 7.0289
+n1_int_p0_m125[4] = 45.7543 ± 6.8352
+n1_int_p1_m125[0] = 1.6500 ± 0.2255
+n1_int_p1_m125[1] = -1.6500 ± 0.0239
+n1_int_p1_m125[2] = 1.0417 ± 0.1556
+n1_int_p1_m125[3] = 1.2796 ± 0.1912
+n1_int_p1_m125[4] = 0.6517 ± 0.0974
+n1_int_p0_m130[0] = 0.5663 ± 0.1009
+n1_int_p0_m130[1] = 0.7068 ± 0.0952
+n1_int_p0_m130[2] = 3.3166 ± 0.0662
+n1_int_p0_m130[3] = 3.1957 ± 0.0744
+n1_int_p0_m130[4] = 3.4190 ± 0.0649
+n1_int_p1_m130[0] = -0.6001 ± 0.0187
+n1_int_p1_m130[1] = -0.5599 ± 0.0218
+n1_int_p1_m130[2] = -0.0944 ± 0.0183
+n1_int_p1_m130[3] = -0.1116 ± 0.0232
+n1_int_p1_m130[4] = -0.0193 ± 0.0043
+n2_int_p0_m120[0] = 0.4856 ± 0.0122
+n2_int_p0_m120[1] = 0.4778 ± 0.0137
+n2_int_p0_m120[2] = 0.4596 ± 0.0023
+n2_int_p0_m120[3] = 0.4593 ± 0.0039
+n2_int_p0_m120[4] = 198.7234 ± 29.6870
+n2_int_p1_m120[0] = 1.4999 ± 0.2241
+n2_int_p1_m120[1] = 1.4906 ± 0.2227
+n2_int_p1_m120[2] = 1.4589 ± 0.2179
+n2_int_p1_m120[3] = 1.1730 ± 0.1752
+n2_int_p1_m120[4] = -0.4175 ± 0.0624
+n2_int_p0_m125[0] = 2002.1363 ± 299.0957
+n2_int_p0_m125[1] = 1588.8459 ± 237.3550
+n2_int_p0_m125[2] = 3.4616 ± 0.5171
+n2_int_p0_m125[3] = 1977.3158 ± 295.3878
+n2_int_p0_m125[4] = 478.6137 ± 71.4993
+n2_int_p1_m125[0] = 0.3471 ± 0.0519
+n2_int_p1_m125[1] = 1.4751 ± 0.2204
+n2_int_p1_m125[2] = -0.3331 ± 0.0498
+n2_int_p1_m125[3] = 1.4593 ± 0.2180
+n2_int_p1_m125[4] = 1.3458 ± 0.2011
+n2_int_p0_m130[0] = 68.3721 ± 10.2140
+n2_int_p0_m130[1] = 199.6581 ± 29.8266
+n2_int_p0_m130[2] = 193.9882 ± 28.9796
+n2_int_p0_m130[3] = 16.7074 ± 2.4959
+n2_int_p0_m130[4] = 197.6212 ± 29.5223
+n2_int_p1_m130[0] = 1.4860 ± 0.2220
+n2_int_p1_m130[1] = 1.3292 ± 0.1986
+n2_int_p1_m130[2] = 1.3681 ± 0.2044
+n2_int_p1_m130[3] = 1.4905 ± 0.2227
+n2_int_p1_m130[4] = 1.0780 ± 0.1610
+a1_int_p0_m120[0] = 14.8815 ± 2.2231
+a1_int_p0_m120[1] = 19.1279 ± 2.8575
+a1_int_p0_m120[2] = 13.4596 ± 2.0107
+a1_int_p0_m120[3] = 17.9457 ± 2.6809
+a1_int_p0_m120[4] = 0.8789 ± 0.1313
+a1_int_p1_m120[0] = 1.2887 ± 0.1925
+a1_int_p1_m120[1] = 1.5000 ± 0.2241
+a1_int_p1_m120[2] = -0.9199 ± 0.1374
+a1_int_p1_m120[3] = 1.3520 ± 0.2020
+a1_int_p1_m120[4] = 1.4056 ± 0.2100
+a1_int_p0_m125[0] = 19.2984 ± 2.8830
+a1_int_p0_m125[1] = 19.9999 ± 2.9877
+a1_int_p0_m125[2] = 11.9078 ± 1.7789
+a1_int_p0_m125[3] = 15.4607 ± 2.3096
+a1_int_p0_m125[4] = 12.1580 ± 1.8163
+a1_int_p1_m125[0] = 0.9991 ± 0.1493
+a1_int_p1_m125[1] = 1.4995 ± 0.2240
+a1_int_p1_m125[2] = 0.9545 ± 0.1426
+a1_int_p1_m125[3] = 1.4839 ± 0.2217
+a1_int_p1_m125[4] = -1.2278 ± 0.1834
+a1_int_p0_m130[0] = 7.7046 ± 1.1510
+a1_int_p0_m130[1] = 17.0768 ± 2.5511
+a1_int_p0_m130[2] = 19.9978 ± 2.9874
+a1_int_p0_m130[3] = 19.2887 ± 2.8815
+a1_int_p0_m130[4] = 19.7729 ± 2.9538
+a1_int_p1_m130[0] = 1.3978 ± 0.2088
+a1_int_p1_m130[1] = 1.3391 ± 0.2000
+a1_int_p1_m130[2] = 1.4586 ± 0.2179
+a1_int_p1_m130[3] = 0.9834 ± 0.1469
+a1_int_p1_m130[4] = 1.2552 ± 0.1875
+a2_int_p0_m120[0] = 49.9593 ± 7.4633
+a2_int_p0_m120[1] = 49.7125 ± 7.4265
+a2_int_p0_m120[2] = 37.7970 ± 5.6464
+a2_int_p0_m120[3] = 44.0839 ± 6.5856
+a2_int_p0_m120[4] = 43.0515 ± 6.4314
+a2_int_p1_m120[0] = 1.4081 ± 0.2104
+a2_int_p1_m120[1] = 1.4240 ± 0.2127
+a2_int_p1_m120[2] = 1.0646 ± 0.1590
+a2_int_p1_m120[3] = 0.8643 ± 0.1291
+a2_int_p1_m120[4] = 0.8871 ± 0.1325
+a2_int_p0_m125[0] = 41.7451 ± 6.2362
+a2_int_p0_m125[1] = 1.1121 ± 0.1661
+a2_int_p0_m125[2] = 46.4717 ± 6.9423
+a2_int_p0_m125[3] = 19.9442 ± 2.9794
+a2_int_p0_m125[4] = 9.6322 ± 1.4389
+a2_int_p1_m125[0] = 0.8902 ± 0.1330
+a2_int_p1_m125[1] = 0.2408 ± 0.0360
+a2_int_p1_m125[2] = 1.0920 ± 0.1631
+a2_int_p1_m125[3] = 0.7682 ± 0.1148
+a2_int_p1_m125[4] = 0.3937 ± 0.0588
+a2_int_p0_m130[0] = 49.9126 ± 7.4564
+a2_int_p0_m130[1] = 47.0071 ± 7.0223
+a2_int_p0_m130[2] = 45.6859 ± 6.8249
+a2_int_p0_m130[3] = 41.5563 ± 6.2080
+a2_int_p0_m130[4] = 11.9284 ± 1.7820
+a2_int_p1_m130[0] = 0.2977 ± 0.0445
+a2_int_p1_m130[1] = 1.1545 ± 0.1725
+a2_int_p1_m130[2] = 1.4707 ± 0.2197
+a2_int_p1_m130[3] = -1.0083 ± 0.1506
+a2_int_p1_m130[4] = 1.4945 ± 0.2233
+N_int_p0_m120[0] = 4.0239 ± 0.6011
+N_int_p0_m120[1] = 3.4819 ± 0.5202
+N_int_p0_m120[2] = 4.1477 ± 0.6196
+N_int_p0_m120[3] = 4.2274 ± 0.6315
+N_int_p0_m120[4] = 4.0215 ± 0.6008
+N_int_p1_m120[0] = -0.0925 ± 0.0138
+N_int_p1_m120[1] = -0.0255 ± 0.0038
+N_int_p1_m120[2] = 0.0498 ± 0.0074
+N_int_p1_m120[3] = 0.0974 ± 0.0145
+N_int_p1_m120[4] = 0.0985 ± 0.0147
+N_int_p0_m125[0] = 4.8639 ± 0.7266
+N_int_p0_m125[1] = 4.2964 ± 0.6418
+N_int_p0_m125[2] = 4.6792 ± 0.6990
+N_int_p0_m125[3] = 4.4927 ± 0.6712
+N_int_p0_m125[4] = 4.6878 ± 0.7003
+N_int_p1_m125[0] = 0.0867 ± 0.0129
+N_int_p1_m125[1] = 0.0884 ± 0.0132
+N_int_p1_m125[2] = 0.0750 ± 0.0112
+N_int_p1_m125[3] = 0.0917 ± 0.0137
+N_int_p1_m125[4] = 0.0829 ± 0.0124
+N_int_p0_m130[0] = 4.6201 ± 0.6902
+N_int_p0_m130[1] = 4.5794 ± 0.6841
+N_int_p0_m130[2] = 2.9520 ± 0.4410
+N_int_p0_m130[3] = 3.8898 ± 0.5811
+N_int_p0_m130[4] = 3.2298 ± 0.4825
+N_int_p1_m130[0] = 0.0980 ± 0.0146
+N_int_p1_m130[1] = 0.0998 ± 0.0149
+N_int_p1_m130[2] = 0.0680 ± 0.0102
+N_int_p1_m130[3] = -0.0648 ± 0.0097
+N_int_p1_m130[4] = 0.0495 ± 0.0074
