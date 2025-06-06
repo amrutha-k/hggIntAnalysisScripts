@@ -22,8 +22,8 @@ def common_plot_options_int():
     plt.xlabel(r'$M_{\gamma\gamma}\ (GeV)$')
     plt.ylabel('entries')
     #mpl.cms.text('Internal')
-    plt.xlim(118,130)
-    plt.xticks(np.arange(118,130,2))
+    plt.xlim(115,135)
+    plt.xticks(np.arange(115,135,2))
     
 def common_plot_options_mass(hl, hh):
     plt.xlabel(r'$\bm{M_{\gamma\gamma}}$ (GeV)', fontsize=22, weight='bold')
@@ -118,7 +118,10 @@ def plot_a_err(b, aVars, chi2aplus, chi2aminus, plotdir, plabel):
     
     #popt, pcov = curve_fit(parabola, x_, y_, p0 = (1000, a+mref*b, min(y_)) )
     #print((10000, b, min(y_)))
-    popt, pcov = curve_fit(parabola, x_, y_, p0 = (1000, b, min(y_)) )
+    dx = x_[1] - x_[0]
+    dy = y_[1] - y_[0]
+    approx_a = dy / (dx**2) if dx != 0 else 1e-3
+    popt, pcov = curve_fit(parabola, x_, y_, p0 = (approx_a, b, min(y_)) )
     fit_ = parabola(x_, *popt)
     plt.plot(x_, fit_, color='blue')
     

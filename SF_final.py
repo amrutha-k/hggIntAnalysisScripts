@@ -100,19 +100,19 @@ pLUT['noint']['N_p1'] = [0.0,-0.1,0.1]
 pLUT['int']['sigma_int_p1'] = [0.0,-0.1,0.1]
 #pLUT['int']['sigma_int_p1_m125'] = [0.0,-0.1,0.1]
 #pLUT['int']['sigma_int_p1_m130'] = [0.0,-0.1,0.1]
-pLUT['int']['n1_int_p1'] = [0.0,-0.5,0.5]
+pLUT['int']['n1_int_p1'] = [0.0,-1.0,1.0]
 #pLUT['int']['n1_int_p1_m125'] = [0.0,-2.5,2.5]
 #pLUT['int']['n1_int_p1_m130'] = [0.0,-2.5,2.5]
-pLUT['int']['n2_int_p1'] = [0.0,-5.0,80.0]
+pLUT['int']['n2_int_p1'] = [0.0,-0.01,0.01]
 #pLUT['int']['n2_int_p1_m125'] = [0.0,-2.5,2.5]
 #pLUT['int']['n2_int_p1_m130'] = [0.0,-2.5,2.5]
-pLUT['int']['a1_int_p1'] = [0.0,-0.1,0.1]
+pLUT['int']['a1_int_p1'] = [0.0,-0.5,0.5]
 #pLUT['int']['a1_int_p1_m125'] = [0.0,-2.5,2.5]
 #pLUT['int']['a1_int_p1_m130'] = [0.0,-2.5,2.5]
-pLUT['int']['a2_int_p1'] = [0.0,-1.5,2.5]
+pLUT['int']['a2_int_p1'] = [0.0,-0.01,0.01]
 #pLUT['int']['a2_int_p1_m125'] = [0.0,-2.5,2.5]
 #pLUT['int']['a2_int_p1_m130'] = [0.0,-2.5,2.5]
-pLUT['int']['N_int_p1'] = [0.0,-0.4,0.4]
+pLUT['int']['N_int_p1'] = [0.0,-0.1,0.1]
 #pLUT['int']['N_int_p1_m125'] = [0.0,-0.5,0.5]
 #pLUT['int']['N_int_p1_m130'] = [0.0,-0.5,0.5]
 
@@ -153,9 +153,9 @@ hhigh = 130.0
 nbins = 120
 catlabel = [f'UntaggedTag_{i}_{args.year}' for i in range(ncats - 1)] + [f'VBFTag_0_{args.year}']
 m_dict = {
-    120.0:(52.22, 0.002218, 1.482e-03, 1.35, -2.168e-04),
-    125.0:(48.58, 0.00227, 1.608e-03, 1.26, -2.051e-04),
-    130.0:(45.31, 0.002238, 1.82e-03, 1.14, -2.067e-04)
+    120.0:(52.22, 0.002218, 0.000517, 1.35, -2.168e-04),
+    125.0:(48.58, 0.00227, 0.000517, 1.26, -2.051e-04),
+    130.0:(45.31, 0.002238, 0.000517, 1.14, -2.067e-04)
     }
 
 fixed_params_dict = {}
@@ -272,7 +272,7 @@ def main():
         for f in range(len(files_intgg)):
             if i == (ncats - 1):
                 df_vbf = up.open(files_intgg[f])['tagsDumper/trees/ggh_125_13TeV_VBFTag_0'].arrays(['CMS_hgg_mass','weight'], library='pd')
-                df_vbf['weight'] = df_vbf['weight']*(lumi)
+                df_vbf['weight'] = df_vbf['weight']*(lumi)*(0.3215174129)
                 df_noInt_vbf = up.open(files_sig[f])['tagsDumper/trees/ggh_125_13TeV_VBFTag_0'].arrays(['CMS_hgg_mass','weight'], library='pd')
                 df_noInt_vbf['weight'] = df_noInt_vbf['weight']*(lumi)
                 gg_int_dfs.append(df_vbf)
@@ -283,7 +283,7 @@ def main():
                     qg_int_dfs.append(df_qg_vbf)
             else:
                 df = up.open(files_intgg[f])[f'tagsDumper/trees/ggh_125_13TeV_UntaggedTag_%d'%(i)].arrays(['CMS_hgg_mass','weight'], library='pd')
-                df['weight'] = df['weight']*(lumi)
+                df['weight'] = df['weight']*(lumi)*(0.3215174129)
                 gg_int_dfs.append(df)
                 df_noInt = up.open(files_sig[f])[f'tagsDumper/trees/ggh_125_13TeV_UntaggedTag_%d'%(i)].arrays(['CMS_hgg_mass','weight'], library='pd')
                 df_noInt['weight'] = df_noInt['weight']*(lumi)

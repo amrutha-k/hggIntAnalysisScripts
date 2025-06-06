@@ -118,7 +118,10 @@ def plot_a_err(b, aVars, chi2aplus, chi2aminus, plotdir, plabel):
     
     #popt, pcov = curve_fit(parabola, x_, y_, p0 = (1000, a+mref*b, min(y_)) )
     #print((10000, b, min(y_)))
-    popt, _ = curve_fit(parabola, x_, y_, p0 = (10000, b, min(y_)), maxfev=10000)
+    dx = x_[1] - x_[0]
+    dy = y_[1] - y_[0]
+    approx_a = dy / (dx**2) if dx != 0 else 1e-5
+    popt, _ = curve_fit(parabola, x_, y_, p0 = (approx_a, b, min(y_)), maxfev=10000)
     fit_ = parabola(x_, *popt)
     plt.plot(x_, fit_, color='blue')
     

@@ -9,7 +9,7 @@ import mplhep as mpl
 from scipy.optimize import curve_fit
 
 from python.model import dscb
-import python.plotting as plottool
+import python.plotting_ini as plottool
 
 plt.style.use(mpl.style.ROOT)
 plt.style.use(mpl.style.CMS)
@@ -29,17 +29,18 @@ GammaRatio = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 1.7, 1.9, 2.0, 3.0, 4
 #infile_nonInt = '/eos/user/r/rgargiul/dataHggWidth/trees/trees_postVBFcat_sig/output_GluGluHToGG_M125_TuneCP5_13TeV-amcatnloFXFX-pythia8.root'
 
 
-UL18_sig = '/eos/user/a/amkrishn/hggWidth/mcNtuples/condor_output/2018/sigNewBoundaries/hadded_tree/output_GluGluHToGG_M125_TuneCP5_13TeV-amcatnloFXFX-pythia8.root'
-UL18_intgg = '/eos/user/a/amkrishn/hggWidth/mcNtuples/condor_output/2018/intNewBoundaries/output_GluGluHToGG_int_M125_13TeV-sherpa.root'
+#UL18_sig = '/eos/user/a/amkrishn/hggWidth/mcNtuples/condor_output/2018/sigNewBoundaries/hadded_tree/output_GluGluHToGG_M125_TuneCP5_13TeV-amcatnloFXFX-pythia8.root'
+#UL18_intgg = '/eos/user/a/amkrishn/hggWidth/mcNtuples/condor_output/2018/intNewBoundaries/output_GluGluHToGG_int_M125_13TeV-sherpa.root'
 
+UL17_sig = '/eos/cms/store/group/phys_higgs/cmshgg/rgargiul/trees/trees_sig_UL17/hadded/output_GluGluHToGG_M125_TuneCP5_13TeV-amcatnloFXFX-pythia8_corr.root'
+UL17_intgg = '/eos/cms/store/group/phys_higgs/cmshgg/rgargiul/trees/trees_int_UL17/hadded/output_GluGluHToGG_int_M125_13TeV-sherpa_corr.root'
+UL17_intqg = '/eos/cms/store/group/phys_higgs/cmshgg/rgargiul/trees/trees_intqg_UL17/hadded/output_GluGluHToGG_intqg_M125_13TeV-sherpa_corr.root'
 #files_intgg = [UL16pre_intgg, UL16post_intgg, UL17_intgg, UL18_intgg]
 #files_sig = [UL16pre_sig, UL16post_sig, UL17_sig, UL18_sig]
 
-files_intgg = [UL18_intgg]
-files_sig = [UL18_sig]
-
-gg_int_events = []
-no_int_events = []
+files_intgg = [UL17_intgg]
+files_intqg = [UL17_intqg]
+files_sig = [UL17_sig]
 
 '''
 for i in range(10): 
@@ -58,35 +59,48 @@ for i in range(10):
     no_int_events.append(pd.concat(no_int_dfs))
 
 '''
-for i in range(6): 
+gg_int_events = []
+qg_int_events = []
+no_int_events = []
+
+for i in range(11):
+    qg_int_dfs = []
     gg_int_dfs = []
     no_int_dfs = []
 
     for f in range(len(files_intgg)):
-        if i == 5:
+        if i == 10:
             df_vbf = up.open(files_intgg[f])['tagsDumper/trees/ggh_125_13TeV_VBFTag_0'].arrays(['CMS_hgg_mass','weight'], library='pd')
-            df_vbf['weight'] = df_vbf['weight']*(59.8)
+            df_vbf['weight'] = df_vbf['weight']*(41.48)
+            df_intqg_vbf = up.open(files_intqg[f])['tagsDumper/trees/ggh_125_13TeV_VBFTag_0'].arrays(['CMS_hgg_mass','weight'], library='pd')
+            df_intqg_vbf['weight'] = df_intqg_vbf['weight']*(41.48)
             df_noInt_vbf = up.open(files_sig[f])['tagsDumper/trees/ggh_125_13TeV_VBFTag_0'].arrays(['CMS_hgg_mass','weight'], library='pd')
-            df_noInt_vbf['weight'] = df_noInt_vbf['weight']*(59.8)
+            df_noInt_vbf['weight'] = df_noInt_vbf['weight']*(41.48)
             gg_int_dfs.append(df_vbf)
             no_int_dfs.append(df_noInt_vbf)
+            qg_int_dfs.append(df_intqg_vbf)
         else:
             df = up.open(files_intgg[f])['tagsDumper/trees/ggh_125_13TeV_UntaggedTag_%d'%(i)].arrays(['CMS_hgg_mass','weight'], library='pd')
-            df['weight'] = df['weight']*(59.8)
+            df['weight'] = df['weight']*(41.48)
             gg_int_dfs.append(df)
+            df_intqg = up.open(files_intqg[f])['tagsDumper/trees/ggh_125_13TeV_UntaggedTag_%d'%(i)].arrays(['CMS_hgg_mass','weight'], library='pd')
+            df_intqg['weight'] = df_intqg['weight']*(41.48)
+            qg_int_dfs.append(df_intqg)
             df_noInt = up.open(files_sig[f])['tagsDumper/trees/ggh_125_13TeV_UntaggedTag_%d'%(i)].arrays(['CMS_hgg_mass','weight'], library='pd')
-            df_noInt['weight'] = df_noInt['weight']*(59.8)
+            df_noInt['weight'] = df_noInt['weight']*(41.48)
             no_int_dfs.append(df_noInt)
         
             
     gg_int_events.append(pd.concat(gg_int_dfs))
     no_int_events.append(pd.concat(no_int_dfs))
+    qg_int_events.append(pd.concat(qg_int_dfs))
     
 gg_int_merged = pd.concat(gg_int_events)
+qg_int_merged = pd.concat(qg_int_events)
 no_int_merged = pd.concat(no_int_events)
 
 
-plotDir = '/eos/user/a/amkrishn/www/hggWidth/dMvsWidthXsecScaling/newCategories'
+plotDir = '/eos/user/a/amkrishn/www/hggWidth/AdditionalPlotsReview/'
 #no_int_events['weight'] = no_int_events['weight']*(138.0)
 #gg_int_events['weight'] = gg_int_events['weight']*(138.0) # modify gg int weights
 
@@ -183,31 +197,74 @@ def make_histo_fit(df_, hname):
 
 
 # gg interference
-#h_int, bin_edges = np.histogram(gg_int_events['CMS_hgg_mass'], bins=95, range=(115,134), weights=gg_int_events['weight'])
-#weights_sq = (gg_int_events['weight'])**2
-#h_int_err, bin_edges = np.histogram(gg_int_events['CMS_hgg_mass'], bins=95, range=(115,134), weights=weights_sq)
-#bin_centers = 0.5*(bin_edges[1:] + bin_edges[:-1])
-#fig, ax = plt.subplots(figsize=(10,8))
-#fig.set_dpi(75)
-#plt.errorbar(bin_centers, h_int, yerr=h_int_err**0.5, fmt='o', markersize=6, c='black')
-#common_plot_options_int()
-#plt.rcParams['text.usetex'] = False
-#plt.savefig('%s/gg_interference.png'%plotDir)
-#plt.savefig('%s/gg_interference.pdf'%plotDir)
-#plt.clf()
+h_int, bin_edges = np.histogram(gg_int_merged['CMS_hgg_mass'], bins=60, range=(118,130), weights=gg_int_merged['weight'])
+weights_sq = (gg_int_merged['weight'])**2
+h_int_err, bin_edges = np.histogram(gg_int_merged['CMS_hgg_mass'], bins=60, range=(118,130), weights=weights_sq)
+bin_centers = 0.5*(bin_edges[1:] + bin_edges[:-1])
+fig, ax = plt.subplots(figsize=(10,8))
+fig.set_dpi(75)
+plt.errorbar(bin_centers, h_int, yerr=h_int_err**0.5, fmt='o', markersize=6, c='black')
+plottool.common_plot_options_int()
+plt.rcParams['text.usetex'] = False
+plt.savefig('%s/gg_interference.png'%plotDir)
+plt.savefig('%s/gg_interference.pdf'%plotDir)
+plt.clf()
 
 
 #qg interference
-#h_int_qg, bin_edges = np.histogram(qg_int_events['CMS_hgg_mass'], bins=95, range=(115,134), weights=qg_int_events['weight'])
-#h_int_qg_err, bin_edges = np.histogram(qg_int_events['CMS_hgg_mass'], bins=95, range=(115,134), weights=qg_int_events['weight']**2)
-#bin_centers = 0.5*(bin_edges[1:] + bin_edges[:-1])
-#plt.errorbar(bin_centers, h_int_qg, yerr=h_int_qg_err**0.5, fmt='o', markersize=6, c='black')
-#common_plot_options_int()
-#plt.savefig('%s/qg_interference.png'%plotDir)
-#plt.savefig('%s/qg_interference.pdf'%plotDir)
-#plt.clf()
+h_int_qg, bin_edges = np.histogram(qg_int_merged['CMS_hgg_mass'], bins=60, range=(118,130), weights=qg_int_merged['weight'])
+h_int_qg_err, bin_edges = np.histogram(qg_int_merged['CMS_hgg_mass'], bins=60, range=(118,130), weights=qg_int_merged['weight']**2)
+bin_centers = 0.5*(bin_edges[1:] + bin_edges[:-1])
+plt.errorbar(bin_centers, h_int_qg, yerr=h_int_qg_err**0.5, fmt='o', markersize=6, c='black')
+plottool.common_plot_options_int()
+plt.savefig('%s/qg_interference.png'%plotDir)
+plt.savefig('%s/qg_interference.pdf'%plotDir)
+plt.clf()
+
+
+# Mgg with interference (inclusive pT)                                                                                                                                                                    
+#df_with_int = pd.concat([nonInt_events, gg_int_events, qg_int_events], ignore_index=True)  ##df with interference added                                                                                  
+#df_with_int = pd.concat([no_int_merged, gg_int_merged, qg_int_merged], ignore_index=True)  ##df with interference added                                                                                  
 
 # no interference
+h_noint, bin_edges = np.histogram(no_int_merged['CMS_hgg_mass'], bins=60, range=(118,130), weights=no_int_merged['weight'])
+h_noint_err, bin_edges = np.histogram(no_int_merged['CMS_hgg_mass'], bins=60, range=(118,130), weights=no_int_merged['weight']**2)
+bin_centers = 0.5*(bin_edges[1:] + bin_edges[:-1])
+plt.errorbar(bin_centers, h_noint, yerr=h_noint_err**0.5, fmt='o', markersize=6, c='black')
+plottool.common_plot_options_int()
+plt.savefig('%s/no_interference.png'%plotDir)
+plt.savefig('%s/no_interference.pdf'%plotDir)
+plt.clf()
+
+h_ratio_gg=h_int/h_noint
+h_ratio_gg_err=np.abs(h_ratio_gg)*np.sqrt((h_int_err**0.5/h_int)**2 + (h_noint_err**0.5/h_noint)**2)
+
+h_ratio_qg=h_int_qg/h_noint
+h_ratio_qg_err=np.abs(h_ratio_qg)*np.sqrt((h_int_qg_err**0.5/h_int_qg)**2 + (h_noint_err**0.5/h_noint)**2)
+plt.errorbar(bin_centers, h_ratio_gg, yerr=h_ratio_gg_err, fmt='o', markersize=6, c='red', label='gg_int')
+plt.errorbar(bin_centers, h_ratio_qg, yerr=h_ratio_qg_err, fmt='o', markersize=6, c='blue', label='qg_int')
+plt.xlabel(r'$M_{\gamma\gamma}\ (GeV)$')
+plt.ylabel('ratio')
+plt.xlim(118,130)
+plt.xticks(np.arange(118,130,2))
+plt.legend()
+plt.savefig('%s/ratio_gg_qg.png'%plotDir)
+plt.savefig('%s/ratio_gg_qg.pdf'%plotDir)
+plt.clf()
+
+plt.errorbar(bin_centers, h_ratio_qg, yerr=h_ratio_qg_err, fmt='o', markersize=6, c='blue')
+#plt.xlabel(r'$M_{\gamma\gamma}\ (GeV)$')
+#plt.ylabel('ratio')
+#plt.xlim(118,130)
+#plt.xticks(np.arange(118,130,2))                                                                                                           
+#plottool.common_plot_options_int()
+#plt.savefig('%s/ratio_qg.png'%plotDir)
+#plt.savefig('%s/ratio_qg.pdf'%plotDir)
+#plt.clf()
+
+
+print("***********DONE**************")
+
 #make_histo_fit(no_int_merged, 'mgg_noint')
 
 # Mgg with interference (inclusive pT)
